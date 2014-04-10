@@ -1,0 +1,257 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MatrixActivity" >
+	
+    <TextView
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/app_name" 
+	        android:id="@+id/text_title"
+	        android:textStyle="italic"
+	        android:typeface="serif"
+	        android:textSize="20sp"
+	        />
+    <View  
+       android:id="@+id/line1"
+	   android:layout_width="fill_parent"  
+	   android:layout_height="1dp" 
+	   android:layout_below="@id/text_title"
+	   android:background="?android:attr/listDivider"  
+		/>  
+	
+    <com.origin.origin_wifi_controller.OriginInterceptScrollView
+	    android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:fadingEdge="none"
+		android:scrollbars="none"
+		android:layout_marginTop="30dip">
+		
+	    <RelativeLayout 
+	        android:id = "@+id/clientLayout"
+			android:layout_width="match_parent" 		
+			android:layout_height="wrap_content" 
+			android:layout_below="@id/line1"
+			android:orientation="vertical"
+			android:paddingTop="10dip"
+			android:paddingLeft="10dip"
+			android:paddingRight="10dip"
+			android:paddingBottom="10dip">
+			
+	        <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:text="@string/iptitle" 
+		        android:textSize="18sp"
+		        android:textStyle="bold"
+		        android:id="@+id/iptitle"
+		        android:layout_alignParentLeft = "true"
+		        android:gravity="center_vertical"
+		        />
+	        
+	        <View  
+		       android:id="@+id/line2"
+			   android:layout_width="fill_parent"  
+			   android:layout_height="1dp" 
+			   android:layout_below="@id/iptitle"		   
+			   android:background="?android:attr/listDivider"
+			/> 
+	        
+	        <FrameLayout  
+	            android:id="@+id/Frame_layout"  
+	            android:layout_width="fill_parent"  
+	            android:layout_height="wrap_content"  
+	            android:layout_below="@id/line2" >
+	        
+		        <EditText
+					android:layout_width="fill_parent"
+				    android:layout_height = "wrap_content" 	
+				    android:layout_marginTop="10dip"
+				    android:hint = "@string/ipAddress"		      	 
+				    android:id = "@+id/IPText"/>
+	        	<ImageButton  
+	                android:id="@+id/dropdown_button"  
+	                android:layout_width="wrap_content"  
+	                android:layout_height="wrap_content"  
+	                android:layout_gravity="right|center_vertical"
+	                android:background="@drawable/button_style"/>
+	        </FrameLayout>
+	        
+		    <EditText
+				android:layout_width="fill_parent"
+				android:layout_height = "wrap_content"
+				android:hint = "@string/port"	
+				android:layout_below="@id/Frame_layout"	 
+				android:id = "@+id/PortText"/>
+	        
+	        <View  
+		       android:id="@+id/line3"
+			   android:layout_width="fill_parent"  
+			   android:layout_height="1dp" 
+			   android:layout_below="@id/PortText"		   
+			   android:background="?android:attr/listDivider"
+			/> 
+	        
+	        <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:text="@string/normal" 
+		        android:textSize="18sp"
+		        android:textStyle="bold"
+		        android:id="@+id/normaltitle"
+		        android:layout_alignParentLeft = "true"
+		        android:layout_below="@id/line3"
+		        android:gravity="center_vertical"
+		        android:layout_marginTop="10dip"
+		        />
+	        
+	        <View  
+		       android:id="@+id/line4"
+			   android:layout_width="fill_parent"  
+			   android:layout_height="1dp" 
+			   android:layout_below="@id/normaltitle"		   
+			   android:background="?android:attr/listDivider"
+			/> 
+	        
+	        <CheckedTextView
+		        android:id="@+id/checkeSendPoint"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentLeft="true"
+		        android:layout_alignParentRight="true"
+		        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+		        android:textStyle="normal"
+		        android:checked="true"
+		        android:layout_below="@id/normaltitle"
+		        android:gravity="center_vertical"
+		        android:text="@string/sendpoint" 
+		        android:layout_marginLeft="20dip"/>
+	        
+	        <View  
+		       android:id="@+id/line5"
+			   android:layout_width="fill_parent"  
+			   android:layout_height="1dp" 
+			   android:layout_below="@id/checkeSendPoint"		   
+			   android:background="@drawable/lineshape"
+			/> 
+	        
+	        <CheckedTextView
+		        android:id="@+id/checkeSendGyroscope"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentLeft="true"
+		        android:layout_alignParentRight="true"
+		        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+		        android:textStyle="normal"
+		        android:layout_below="@id/line5"
+		        android:gravity="center_vertical"
+		        android:text="@string/sendgyroscope" 
+		        android:layout_marginLeft="20dip"/>
+	        
+	        <View  
+		       android:id="@+id/line6"
+			   android:layout_width="fill_parent"  
+			   android:layout_height="1dp" 
+			   android:layout_below="@id/checkeSendGyroscope"		   
+			   android:background="@drawable/lineshape"
+			/>
+	        
+	        <CheckedTextView
+		        android:id="@+id/checkelandscape"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentLeft="true"
+		        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+		        android:textStyle="normal"
+		        android:layout_below="@id/line6"
+		        android:gravity="center_vertical"
+		        android:text="@string/landscape" 
+		        android:layout_marginLeft="20dip"/>
+	        
+	        <CheckedTextView
+		        android:id="@+id/checkeportrait"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentRight="true"
+		        android:layout_alignRight="@id/checkelandscape"
+		        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+		        android:textStyle="normal"
+		        android:layout_below="@id/line6"
+		        android:gravity="center_vertical"
+		        android:text="@string/portrait" 
+		        android:layout_marginLeft="20dip"/>
+	        
+	       	<CheckedTextView
+		        android:id="@+id/usbconnect"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+		        android:textStyle="normal"
+		        android:layout_below="@id/checkelandscape"
+		        android:layout_alignParentLeft="true"
+		        android:gravity="center_vertical"
+		        android:text="@string/usb" 
+		        android:layout_marginLeft="20dip"/>
+	        
+	        <View  
+		       android:id="@+id/line9"
+			   android:layout_width="fill_parent"  
+			   android:layout_height="1dp" 
+			   android:layout_below="@id/usbconnect"		   
+			   android:background="@drawable/lineshape"
+			/>
+	        
+	        <Button 
+	            android:id="@+id/connect"
+	            android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_below="@id/line9"
+		        android:text="@string/connecttext"
+		        android:layout_centerHorizontal="true"
+		        android:textSize="15sp"
+		        android:layout_marginTop="10dip"
+		        android:textColor="#804747"
+	            />
+	        
+	        <View  
+		       android:id="@+id/line7"
+			   android:layout_width="fill_parent"  
+			   android:layout_height="1dp" 
+			   android:layout_below="@id/connect"		   
+			   android:background="?android:attr/listDivider"
+			/> 
+			
+	        <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:text="@string/output" 
+		        android:textSize="18sp"
+		        android:textStyle="bold"
+		        android:id="@+id/outputtitle"
+		        android:layout_alignParentLeft = "true"
+		        android:layout_below="@id/line7"
+		        android:gravity="center_vertical"
+		        android:layout_marginTop="10dip"
+		        />
+	        
+	        <View  
+		       android:id="@+id/line8"
+			   android:layout_width="fill_parent"  
+			   android:layout_height="1dp" 
+			   android:layout_below="@id/outputtitle"		   
+			   android:background="?android:attr/listDivider"
+			/> 
+			
+	        <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:id="@+id/outputinfo"
+		        android:layout_alignParentLeft = "true"
+		        android:layout_below="@id/line8"
+		        android:layout_marginTop="5dip"
+		        android:lines="7"
+		        />
+		</RelativeLayout>	
+	</com.origin.origin_wifi_controller.OriginInterceptScrollView>
+</RelativeLayout>
